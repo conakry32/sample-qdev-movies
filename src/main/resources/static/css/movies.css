@@ -22,12 +22,211 @@ body {
 h1 {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background: linear-gradient(45deg, #f39c12, #e74c3c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Pirate Search Form Styles */
+.treasure-hunt-form {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(255,255,255,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.treasure-hunt-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #f39c12, #e74c3c);
+}
+
+.treasure-hunt-form h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #ffc107;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-field label {
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.search-field input,
+.search-field select {
+    padding: 12px 15px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.search-field input::placeholder {
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    outline: none;
+    border-color: #ffc107;
+    box-shadow: 0 0 15px rgba(255,193,7,0.3);
+    background: rgba(255,255,255,0.15);
+}
+
+.search-field select option {
+    background: #2d2d2d;
+    color: #fff;
+    padding: 10px;
+}
+
+.search-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-btn {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.search-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(40,167,69,0.5);
+    background: linear-gradient(45deg, #20c997, #17a2b8);
+}
+
+.clear-btn {
+    background: linear-gradient(45deg, #6c757d, #495057);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108,117,125,0.3);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.clear-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(108,117,125,0.5);
+    background: linear-gradient(45deg, #495057, #343a40);
+}
+
+/* Search Messages */
+.search-message {
+    padding: 15px 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.success-message {
+    background: rgba(40,167,69,0.2);
+    border: 2px solid rgba(40,167,69,0.4);
+    color: #28a745;
+}
+
+.error-message {
+    background: rgba(220,53,69,0.2);
+    border: 2px solid rgba(220,53,69,0.4);
+    color: #dc3545;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.empty-state h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #ffc107;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.empty-state p {
+    font-size: 1.2rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.empty-state a {
+    color: #17a2b8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.empty-state a:hover {
+    color: #ffc107;
 }
 
 .movies-grid {
@@ -161,7 +360,33 @@ h1 {
     
     h1 {
         font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .treasure-hunt-form {
+        padding: 20px;
         margin-bottom: 30px;
+    }
+    
+    .treasure-hunt-form h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .search-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .search-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-btn,
+    .clear-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
     }
     
     .movies-grid {
@@ -175,5 +400,21 @@ h1 {
     
     .movie-card h3 {
         font-size: 1.5rem;
+    }
+    
+    .empty-state {
+        padding: 40px 15px;
+    }
+    
+    .empty-icon {
+        font-size: 3rem;
+    }
+    
+    .empty-state h3 {
+        font-size: 1.5rem;
+    }
+    
+    .empty-state p {
+        font-size: 1rem;
     }
 }
